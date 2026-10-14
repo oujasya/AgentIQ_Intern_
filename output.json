@@ -1,0 +1,76 @@
+{
+    "input_count": 10,
+    "valid_count": 7,
+    "rejected_count": 3,
+    "duplicates_removed": 1,
+    "summary": {
+        "total": 6,
+        "by_status": {
+            "open": 4,
+            "closed": 2
+        },
+        "by_source": {
+            "salesforce": 2,
+            "jira": 2,
+            "servicenow": 2
+        },
+        "by_category": {
+            "access": 4,
+            "billing": 2
+        }
+    },
+    "findings": {
+        "aging": [
+            {
+                "source": "salesforce",
+                "id": "A1",
+                "observed_value": 29,
+                "threshold": 7,
+                "reason": "Open record is 29 days old"
+            },
+            {
+                "source": "salesforce",
+                "id": "C3",
+                "observed_value": 8,
+                "threshold": 7,
+                "reason": "Open record is 8 days old"
+            }
+        ],
+        "handoff": [
+            {
+                "source": "salesforce",
+                "id": "A1",
+                "observed_value": 4,
+                "threshold": 3,
+                "reason": "More than 3 owner changes"
+            },
+            {
+                "source": "jira",
+                "id": "D4",
+                "observed_value": 5,
+                "threshold": 3,
+                "reason": "More than 3 owner changes"
+            }
+        ]
+    },
+    "rejections": [
+        {
+            "index": 7,
+            "reasons": [
+                "Invalid owner_changes: must be a non-negative integer, excluding booleans"
+            ]
+        },
+        {
+            "index": 8,
+            "reasons": [
+                "Invalid date: expected a real date in exact YYYY-MM-DD format"
+            ]
+        },
+        {
+            "index": 9,
+            "reasons": [
+                "Invalid id: must be a non-empty string"
+            ]
+        }
+    ]
+}
