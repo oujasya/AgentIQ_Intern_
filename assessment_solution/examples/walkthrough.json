@@ -1,0 +1,1075 @@
+{
+  "reference_at": "2026-11-10T00:00:00Z",
+  "q2_loading": {
+    "missing": {
+      "error_type": "FileNotFoundError"
+    },
+    "invalid": {
+      "error_type": "ValueError"
+    },
+    "empty": {
+      "records": []
+    }
+  },
+  "ingestion": {
+    "rejected": [
+      {
+        "input_index": 4,
+        "record": {
+          "id": "1005",
+          "source": "Salesforce",
+          "title": "Software installation request",
+          "status": "In Progress",
+          "created_at": "2026-10-14T09:00:00Z",
+          "resolved_at": null,
+          "owner_changes": 2,
+          "category": "Software"
+        },
+        "reasons": [
+          "Missing required field: priority"
+        ]
+      },
+      {
+        "input_index": 11,
+        "record": {
+          "id": "2005",
+          "source": "ServiceNow",
+          "status": "In Progress",
+          "priority": "Medium",
+          "created_at": "2026-10-14T09:00:00Z",
+          "resolved_at": null,
+          "owner_changes": 2,
+          "category": "Software"
+        },
+        "reasons": [
+          "Missing required field: title"
+        ]
+      },
+      {
+        "input_index": 16,
+        "record": {
+          "id": "3003",
+          "source": "Jira",
+          "title": "Account access request",
+          "status": "New",
+          "priority": "Low",
+          "created_at": "not-a-timestamp",
+          "resolved_at": null,
+          "owner_changes": 3,
+          "category": "Access Management"
+        },
+        "reasons": [
+          "created_at must be a valid UTC timestamp"
+        ]
+      },
+      {
+        "input_index": 19,
+        "record": {
+          "id": "3006",
+          "source": "Jira",
+          "title": "Dashboard loading failure",
+          "status": "Done",
+          "priority": "Low",
+          "created_at": "2026-10-15T09:00:00Z",
+          "resolved_at": "2026-10-16T11:00:00Z",
+          "owner_changes": -2,
+          "category": "Application"
+        },
+        "reasons": [
+          "owner_changes must be greater than or equal to 0"
+        ]
+      }
+    ],
+    "duplicates": [
+      {
+        "source": "Salesforce",
+        "id": "1001"
+      }
+    ],
+    "input_count": 22,
+    "accepted_count": 17,
+    "valid_count": 18,
+    "rejected_count": 4,
+    "duplicate_count": 1
+  },
+  "baseline_analysis": {
+    "summary": {
+      "total": 17,
+      "open": 9,
+      "resolved": 8,
+      "by_source": {
+        "Jira": 5,
+        "Salesforce": 6,
+        "ServiceNow": 6
+      },
+      "by_priority": {
+        "High": 9,
+        "Low": 4,
+        "Medium": 4
+      }
+    },
+    "resolution_times": {
+      "records": [
+        {
+          "source": "Salesforce",
+          "id": "1002",
+          "resolution_hours": 26.0
+        },
+        {
+          "source": "Salesforce",
+          "id": "1004",
+          "resolution_hours": 26.0
+        },
+        {
+          "source": "Salesforce",
+          "id": "1006",
+          "resolution_hours": 26.0
+        },
+        {
+          "source": "ServiceNow",
+          "id": "2002",
+          "resolution_hours": 26.0
+        },
+        {
+          "source": "ServiceNow",
+          "id": "2004",
+          "resolution_hours": 26.0
+        },
+        {
+          "source": "ServiceNow",
+          "id": "2006",
+          "resolution_hours": 26.0
+        },
+        {
+          "source": "Jira",
+          "id": "3002",
+          "resolution_hours": 26.0
+        },
+        {
+          "source": "Jira",
+          "id": "3004",
+          "resolution_hours": 26.0
+        }
+      ],
+      "issues": []
+    },
+    "aging_work": [
+      {
+        "source": "Jira",
+        "id": "1001",
+        "created_at": "2026-10-10T09:00:00Z",
+        "age_days": 30.625
+      },
+      {
+        "source": "Salesforce",
+        "id": "1001",
+        "created_at": "2026-10-10T09:00:00Z",
+        "age_days": 30.625
+      },
+      {
+        "source": "ServiceNow",
+        "id": "1001",
+        "created_at": "2026-10-10T09:00:00Z",
+        "age_days": 30.625
+      },
+      {
+        "source": "Salesforce",
+        "id": "1003",
+        "created_at": "2026-10-12T09:00:00Z",
+        "age_days": 28.625
+      },
+      {
+        "source": "ServiceNow",
+        "id": "2003",
+        "created_at": "2026-10-12T09:00:00Z",
+        "age_days": 28.625
+      },
+      {
+        "source": "Jira",
+        "id": "3005",
+        "created_at": "2026-10-14T09:00:00Z",
+        "age_days": 26.625
+      },
+      {
+        "source": "Jira",
+        "id": "3007",
+        "created_at": "2026-10-16T09:00:00Z",
+        "age_days": 24.625
+      },
+      {
+        "source": "Salesforce",
+        "id": "1007",
+        "created_at": "2026-10-16T09:00:00Z",
+        "age_days": 24.625
+      },
+      {
+        "source": "ServiceNow",
+        "id": "2007",
+        "created_at": "2026-10-16T09:00:00Z",
+        "age_days": 24.625
+      }
+    ],
+    "handoff_friction": {
+      "threshold": 3,
+      "records": [
+        {
+          "source": "Salesforce",
+          "id": "1004",
+          "owner_changes": 4
+        },
+        {
+          "source": "Salesforce",
+          "id": "1006",
+          "owner_changes": 5
+        },
+        {
+          "source": "ServiceNow",
+          "id": "2004",
+          "owner_changes": 4
+        },
+        {
+          "source": "ServiceNow",
+          "id": "2006",
+          "owner_changes": 5
+        },
+        {
+          "source": "Jira",
+          "id": "3004",
+          "owner_changes": 4
+        }
+      ],
+      "flagged_count": 5,
+      "percentage": 29.41176470588235
+    },
+    "repeated_work": [
+      {
+        "category": "Access Management",
+        "count": 8,
+        "supporting_records": [
+          {
+            "source": "Salesforce",
+            "id": "1001"
+          },
+          {
+            "source": "Salesforce",
+            "id": "1003"
+          },
+          {
+            "source": "Salesforce",
+            "id": "1007"
+          },
+          {
+            "source": "ServiceNow",
+            "id": "1001"
+          },
+          {
+            "source": "ServiceNow",
+            "id": "2003"
+          },
+          {
+            "source": "ServiceNow",
+            "id": "2007"
+          },
+          {
+            "source": "Jira",
+            "id": "1001"
+          },
+          {
+            "source": "Jira",
+            "id": "3007"
+          }
+        ],
+        "explanation": "Repeated work deserves investigation; check repeatability, exceptions, risk, and cost before automating."
+      }
+    ],
+    "average_owner_changes": 2.1176470588235294,
+    "findings": [
+      {
+        "type": "aging_work",
+        "explanation": "Open work is older than seven days.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 7,
+          "unit": "days"
+        },
+        "observed_value": 30.625,
+        "supporting_records": [
+          {
+            "source": "Jira",
+            "id": "1001"
+          }
+        ]
+      },
+      {
+        "type": "aging_work",
+        "explanation": "Open work is older than seven days.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 7,
+          "unit": "days"
+        },
+        "observed_value": 30.625,
+        "supporting_records": [
+          {
+            "source": "Salesforce",
+            "id": "1001"
+          }
+        ]
+      },
+      {
+        "type": "aging_work",
+        "explanation": "Open work is older than seven days.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 7,
+          "unit": "days"
+        },
+        "observed_value": 30.625,
+        "supporting_records": [
+          {
+            "source": "ServiceNow",
+            "id": "1001"
+          }
+        ]
+      },
+      {
+        "type": "aging_work",
+        "explanation": "Open work is older than seven days.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 7,
+          "unit": "days"
+        },
+        "observed_value": 28.625,
+        "supporting_records": [
+          {
+            "source": "Salesforce",
+            "id": "1003"
+          }
+        ]
+      },
+      {
+        "type": "aging_work",
+        "explanation": "Open work is older than seven days.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 7,
+          "unit": "days"
+        },
+        "observed_value": 28.625,
+        "supporting_records": [
+          {
+            "source": "ServiceNow",
+            "id": "2003"
+          }
+        ]
+      },
+      {
+        "type": "aging_work",
+        "explanation": "Open work is older than seven days.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 7,
+          "unit": "days"
+        },
+        "observed_value": 26.625,
+        "supporting_records": [
+          {
+            "source": "Jira",
+            "id": "3005"
+          }
+        ]
+      },
+      {
+        "type": "aging_work",
+        "explanation": "Open work is older than seven days.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 7,
+          "unit": "days"
+        },
+        "observed_value": 24.625,
+        "supporting_records": [
+          {
+            "source": "Jira",
+            "id": "3007"
+          }
+        ]
+      },
+      {
+        "type": "aging_work",
+        "explanation": "Open work is older than seven days.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 7,
+          "unit": "days"
+        },
+        "observed_value": 24.625,
+        "supporting_records": [
+          {
+            "source": "Salesforce",
+            "id": "1007"
+          }
+        ]
+      },
+      {
+        "type": "aging_work",
+        "explanation": "Open work is older than seven days.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 7,
+          "unit": "days"
+        },
+        "observed_value": 24.625,
+        "supporting_records": [
+          {
+            "source": "ServiceNow",
+            "id": "2007"
+          }
+        ]
+      },
+      {
+        "type": "handoff_friction",
+        "explanation": "Owner changes exceed the configured threshold.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 3,
+          "unit": "owner_changes"
+        },
+        "observed_value": 4,
+        "supporting_records": [
+          {
+            "source": "Salesforce",
+            "id": "1004"
+          }
+        ]
+      },
+      {
+        "type": "handoff_friction",
+        "explanation": "Owner changes exceed the configured threshold.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 3,
+          "unit": "owner_changes"
+        },
+        "observed_value": 5,
+        "supporting_records": [
+          {
+            "source": "Salesforce",
+            "id": "1006"
+          }
+        ]
+      },
+      {
+        "type": "handoff_friction",
+        "explanation": "Owner changes exceed the configured threshold.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 3,
+          "unit": "owner_changes"
+        },
+        "observed_value": 4,
+        "supporting_records": [
+          {
+            "source": "ServiceNow",
+            "id": "2004"
+          }
+        ]
+      },
+      {
+        "type": "handoff_friction",
+        "explanation": "Owner changes exceed the configured threshold.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 3,
+          "unit": "owner_changes"
+        },
+        "observed_value": 5,
+        "supporting_records": [
+          {
+            "source": "ServiceNow",
+            "id": "2006"
+          }
+        ]
+      },
+      {
+        "type": "handoff_friction",
+        "explanation": "Owner changes exceed the configured threshold.",
+        "rule_threshold": {
+          "operator": ">",
+          "value": 3,
+          "unit": "owner_changes"
+        },
+        "observed_value": 4,
+        "supporting_records": [
+          {
+            "source": "Jira",
+            "id": "3004"
+          }
+        ]
+      },
+      {
+        "type": "repeated_work",
+        "explanation": "Repeated work deserves investigation; check repeatability, exceptions, risk, and cost before automating.",
+        "rule_threshold": {
+          "operator": ">=",
+          "value": 5,
+          "unit": "records"
+        },
+        "observed_value": 8,
+        "category": "Access Management",
+        "supporting_records": [
+          {
+            "source": "Salesforce",
+            "id": "1001"
+          },
+          {
+            "source": "Salesforce",
+            "id": "1003"
+          },
+          {
+            "source": "Salesforce",
+            "id": "1007"
+          },
+          {
+            "source": "ServiceNow",
+            "id": "1001"
+          },
+          {
+            "source": "ServiceNow",
+            "id": "2003"
+          },
+          {
+            "source": "ServiceNow",
+            "id": "2007"
+          },
+          {
+            "source": "Jira",
+            "id": "1001"
+          },
+          {
+            "source": "Jira",
+            "id": "3007"
+          }
+        ]
+      }
+    ]
+  },
+  "api": {
+    "health": {
+      "status": "ok"
+    },
+    "ingestion_counts": {
+      "accepted_count": 17,
+      "rejected_count": 4,
+      "duplicate_count": 1
+    },
+    "filtered_page": {
+      "total": 3,
+      "limit": 2,
+      "offset": 0,
+      "records": [
+        {
+          "source": "Jira",
+          "id": "1001",
+          "title": "Password reset request",
+          "status": "open",
+          "priority": "High",
+          "created_at": "2026-10-10T09:00:00Z",
+          "resolved_at": null,
+          "owner_changes": 0,
+          "category": "Access Management"
+        },
+        {
+          "source": "Jira",
+          "id": "3005",
+          "title": "Software installation request",
+          "status": "open",
+          "priority": "Medium",
+          "created_at": "2026-10-14T09:00:00Z",
+          "resolved_at": null,
+          "owner_changes": 2,
+          "category": "Software"
+        }
+      ]
+    },
+    "invalid_pagination_status": 422,
+    "findings_status": 200,
+    "unknown_run_status": 404
+  },
+  "connector": {
+    "three_pages": {
+      "requested_pages": [
+        1,
+        2,
+        3
+      ],
+      "retry_delays_seconds": [],
+      "collected_records": [
+        {
+          "page": 1
+        },
+        {
+          "page": 2
+        },
+        {
+          "page": 3
+        }
+      ]
+    },
+    "timeout": {
+      "requested_pages": [
+        1,
+        1,
+        2,
+        3
+      ],
+      "retry_delays_seconds": [
+        1
+      ],
+      "collected_records": [
+        {
+          "page": 1
+        },
+        {
+          "page": 2
+        },
+        {
+          "page": 3
+        }
+      ]
+    },
+    "401": {
+      "requested_pages": [
+        1
+      ],
+      "retry_delays_seconds": [],
+      "error": "Non-retryable HTTP 401"
+    },
+    "429": {
+      "requested_pages": [
+        1,
+        1,
+        2,
+        3
+      ],
+      "retry_delays_seconds": [
+        2.0
+      ],
+      "collected_records": [
+        {
+          "page": 1
+        },
+        {
+          "page": 2
+        },
+        {
+          "page": 3
+        }
+      ]
+    },
+    "500": {
+      "requested_pages": [
+        1,
+        1,
+        2,
+        3
+      ],
+      "retry_delays_seconds": [
+        2.0
+      ],
+      "collected_records": [
+        {
+          "page": 1
+        },
+        {
+          "page": 2
+        },
+        {
+          "page": 3
+        }
+      ]
+    }
+  },
+  "repeated_import": {
+    "first_count": 17,
+    "second_count": 17
+  },
+  "sql_results": [
+    [
+      {
+        "source": "Jira",
+        "open_count": 3
+      },
+      {
+        "source": "Salesforce",
+        "open_count": 3
+      },
+      {
+        "source": "ServiceNow",
+        "open_count": 3
+      }
+    ],
+    [
+      {
+        "source": "Salesforce",
+        "id": "1006",
+        "owner_changes": 5
+      },
+      {
+        "source": "ServiceNow",
+        "id": "2006",
+        "owner_changes": 5
+      },
+      {
+        "source": "Jira",
+        "id": "3004",
+        "owner_changes": 4
+      },
+      {
+        "source": "Salesforce",
+        "id": "1004",
+        "owner_changes": 4
+      },
+      {
+        "source": "ServiceNow",
+        "id": "2004",
+        "owner_changes": 4
+      }
+    ],
+    [
+      {
+        "category": "Access Management",
+        "record_count": 8
+      }
+    ]
+  ],
+  "runs": {
+    "first_run_id": "ed292437-6508-42b8-b5c2-6a476eceae04",
+    "second_run_id": "fb91ec42-9c6b-4ee5-af4c-d65e925f8ad0",
+    "first_findings_count": 15,
+    "second_findings_count": 15,
+    "selected_first_run_findings": {
+      "run_id": "ed292437-6508-42b8-b5c2-6a476eceae04",
+      "reference_at": "2026-11-10T00:00:00Z",
+      "handoff_threshold": 3,
+      "findings": [
+        {
+          "type": "aging_work",
+          "explanation": "Open work is older than seven days.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 7,
+            "unit": "days"
+          },
+          "observed_value": 30.625,
+          "supporting_records": [
+            {
+              "source": "Jira",
+              "id": "1001"
+            }
+          ]
+        },
+        {
+          "type": "aging_work",
+          "explanation": "Open work is older than seven days.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 7,
+            "unit": "days"
+          },
+          "observed_value": 30.625,
+          "supporting_records": [
+            {
+              "source": "Salesforce",
+              "id": "1001"
+            }
+          ]
+        },
+        {
+          "type": "aging_work",
+          "explanation": "Open work is older than seven days.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 7,
+            "unit": "days"
+          },
+          "observed_value": 30.625,
+          "supporting_records": [
+            {
+              "source": "ServiceNow",
+              "id": "1001"
+            }
+          ]
+        },
+        {
+          "type": "aging_work",
+          "explanation": "Open work is older than seven days.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 7,
+            "unit": "days"
+          },
+          "observed_value": 28.625,
+          "supporting_records": [
+            {
+              "source": "Salesforce",
+              "id": "1003"
+            }
+          ]
+        },
+        {
+          "type": "aging_work",
+          "explanation": "Open work is older than seven days.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 7,
+            "unit": "days"
+          },
+          "observed_value": 28.625,
+          "supporting_records": [
+            {
+              "source": "ServiceNow",
+              "id": "2003"
+            }
+          ]
+        },
+        {
+          "type": "aging_work",
+          "explanation": "Open work is older than seven days.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 7,
+            "unit": "days"
+          },
+          "observed_value": 26.625,
+          "supporting_records": [
+            {
+              "source": "Jira",
+              "id": "3005"
+            }
+          ]
+        },
+        {
+          "type": "aging_work",
+          "explanation": "Open work is older than seven days.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 7,
+            "unit": "days"
+          },
+          "observed_value": 24.625,
+          "supporting_records": [
+            {
+              "source": "Jira",
+              "id": "3007"
+            }
+          ]
+        },
+        {
+          "type": "aging_work",
+          "explanation": "Open work is older than seven days.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 7,
+            "unit": "days"
+          },
+          "observed_value": 24.625,
+          "supporting_records": [
+            {
+              "source": "Salesforce",
+              "id": "1007"
+            }
+          ]
+        },
+        {
+          "type": "aging_work",
+          "explanation": "Open work is older than seven days.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 7,
+            "unit": "days"
+          },
+          "observed_value": 24.625,
+          "supporting_records": [
+            {
+              "source": "ServiceNow",
+              "id": "2007"
+            }
+          ]
+        },
+        {
+          "type": "handoff_friction",
+          "explanation": "Owner changes exceed the configured threshold.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 3,
+            "unit": "owner_changes"
+          },
+          "observed_value": 4,
+          "supporting_records": [
+            {
+              "source": "Jira",
+              "id": "3004"
+            }
+          ]
+        },
+        {
+          "type": "handoff_friction",
+          "explanation": "Owner changes exceed the configured threshold.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 3,
+            "unit": "owner_changes"
+          },
+          "observed_value": 4,
+          "supporting_records": [
+            {
+              "source": "Salesforce",
+              "id": "1004"
+            }
+          ]
+        },
+        {
+          "type": "handoff_friction",
+          "explanation": "Owner changes exceed the configured threshold.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 3,
+            "unit": "owner_changes"
+          },
+          "observed_value": 5,
+          "supporting_records": [
+            {
+              "source": "Salesforce",
+              "id": "1006"
+            }
+          ]
+        },
+        {
+          "type": "handoff_friction",
+          "explanation": "Owner changes exceed the configured threshold.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 3,
+            "unit": "owner_changes"
+          },
+          "observed_value": 4,
+          "supporting_records": [
+            {
+              "source": "ServiceNow",
+              "id": "2004"
+            }
+          ]
+        },
+        {
+          "type": "handoff_friction",
+          "explanation": "Owner changes exceed the configured threshold.",
+          "rule_threshold": {
+            "operator": ">",
+            "value": 3,
+            "unit": "owner_changes"
+          },
+          "observed_value": 5,
+          "supporting_records": [
+            {
+              "source": "ServiceNow",
+              "id": "2006"
+            }
+          ]
+        },
+        {
+          "type": "repeated_work",
+          "explanation": "Repeated work deserves investigation; check repeatability, exceptions, risk, and cost before automating.",
+          "rule_threshold": {
+            "operator": ">=",
+            "value": 5,
+            "unit": "records"
+          },
+          "observed_value": 8,
+          "category": "Access Management",
+          "supporting_records": [
+            {
+              "source": "Jira",
+              "id": "1001"
+            },
+            {
+              "source": "Jira",
+              "id": "3007"
+            },
+            {
+              "source": "Salesforce",
+              "id": "1001"
+            },
+            {
+              "source": "Salesforce",
+              "id": "1003"
+            },
+            {
+              "source": "Salesforce",
+              "id": "1007"
+            },
+            {
+              "source": "ServiceNow",
+              "id": "1001"
+            },
+            {
+              "source": "ServiceNow",
+              "id": "2003"
+            },
+            {
+              "source": "ServiceNow",
+              "id": "2007"
+            }
+          ]
+        }
+      ]
+    },
+    "first_run_unchanged": true
+  },
+  "q22_average": {
+    "empty": 0.0,
+    "one": 4.0,
+    "several": 3.0
+  },
+  "q25_threshold_change": {
+    "threshold_3": {
+      "threshold": 3,
+      "records": [
+        {
+          "source": "Salesforce",
+          "id": "1004",
+          "owner_changes": 4
+        },
+        {
+          "source": "Salesforce",
+          "id": "1006",
+          "owner_changes": 5
+        },
+        {
+          "source": "ServiceNow",
+          "id": "2004",
+          "owner_changes": 4
+        },
+        {
+          "source": "ServiceNow",
+          "id": "2006",
+          "owner_changes": 5
+        },
+        {
+          "source": "Jira",
+          "id": "3004",
+          "owner_changes": 4
+        }
+      ],
+      "flagged_count": 5,
+      "percentage": 29.41176470588235
+    },
+    "threshold_5": {
+      "threshold": 5,
+      "records": [],
+      "flagged_count": 0,
+      "percentage": 0.0
+    }
+  }
+}
