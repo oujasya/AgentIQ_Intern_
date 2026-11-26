@@ -16,7 +16,6 @@ def digit_sum_string(n):
     return sum(int(character) for character in str(abs(n)))
 
 
-# Run this file to see an example. Change the sample input to practice.
 if __name__ == "__main__":
     n = -502
     print("Input:", n)
